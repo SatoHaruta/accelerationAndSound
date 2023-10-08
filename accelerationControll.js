@@ -1,8 +1,11 @@
 
 let permissionGranted = false;
+let accelerationMag = 0;
+let YZmag;
 
 function accelerationSetup() {
     acceleration = createVector(0, 0, 0);
+    YZmag = createVector(acceleration.y,acceleration.z);
     if (typeof (DeviceMotionEvent) !== 'undefined' && typeof (DeviceMotionEvent.requestPermission) === 'function') {
         // iOS 13 device
         DeviceMotionEvent.requestPermission()
@@ -55,5 +58,14 @@ function requestAccess() {
 function accelerationDraw() {
     if (!permissionGranted) return;
     textSize(32);
-    text("Acceleration : " + acceleration.mag(), 10, 30);
+    text("AccelerationX : " + acceleration.x, 10, 30);
+    text("AccelerationX : " + acceleration.y, 10, 70);
+    text("AccelerationX : " + acceleration.z, 10, 110);
+    text("AccelerationYZmag : " + YZmag.mag(), 10, 150);
+    text("AccelerationMag : " + accelerationMag, 10, 190);
+
+    YZmag.x = acceleration.y;
+    YZmag.x = acceleration.z;
+
+    accelerationMag = acceleration.x * YZmag.mag();
 }

@@ -24,7 +24,7 @@ function musicSetup() {
 }
 
 function musicDraw() {
-    shifter.pitch = map(mouseX, 0, windowWidth, -3, 3);
+    shifter.pitch = accelerationMag;
 }
 
 function play1() {
