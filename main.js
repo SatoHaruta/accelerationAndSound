@@ -4,7 +4,7 @@ let permissionGranted = false;
 function setup() {
   acceleration = createVector(0,0,0);
   createCanvas(windowWidth, windowHeight);
-  
+  soundSetup();
   if (typeof(DeviceMotionEvent) !== 'undefined' && typeof(DeviceMotionEvent.requestPermission) === 'function') {
     // iOS 13 device
     DeviceMotionEvent.requestPermission()
@@ -61,6 +61,4 @@ function draw() {
   
   textSize(32);
   text("Acceleration : " + acceleration.mag(), 10, 30);
-  
-  
 }
