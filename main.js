@@ -3,7 +3,7 @@ function preload(){
 }
 
 function setup(){
-    frameRate(5);
+    frameRate(60);
     createCanvas(windowWidth, windowHeight);
     accelerationSetup();
     musicSetup();
