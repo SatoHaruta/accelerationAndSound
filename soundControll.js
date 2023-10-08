@@ -1,19 +1,16 @@
 //参考URL
 //https://codepen.io/lsuddem/pen/RJEYLr
 
-let player;
 
-let shifter;
+
 let button;
-
-let baseURL = "music.wav";
+let osc;
 
 function musicPreload() {
-
-    shifter = new Tone.PitchShift(2).toMaster();
-
-    player = new Tone.Player(baseURL).connect(shifter);
-    player.loop = true;
+    osc = new Tone.Oscillator({
+        frequency: 261.63, // 初期周波数をC4 (261.63 Hz)に設定
+        type: 'sine'
+    }).toDestination();
 }
 
 function musicSetup() {
@@ -24,11 +21,11 @@ function musicSetup() {
 }
 
 function musicDraw() {
-    shifter.pitch = accelerationMag;
+    osc.frequency.value = accelerationMag * 100;
 }
 
 function play1() {
-    player.start();
+    osc.start();
 }
 
 

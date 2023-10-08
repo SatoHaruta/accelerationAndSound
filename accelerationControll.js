@@ -67,5 +67,5 @@ function accelerationDraw() {
     YZmag.x = acceleration.y;
     YZmag.x = acceleration.z;
 
-    accelerationMag = acceleration.x;
+    accelerationMag = acceleration.mag();
 }
