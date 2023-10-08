@@ -8,10 +8,11 @@ let osc;
 
 function musicPreload() {
     osc = new Tone.Oscillator({
-        frequency: 261.63, // 初期周波数をC4 (261.63 Hz)に設定
+        frequency: 100.0, // 初期周波数をC4 (261.63 Hz)に設定
         type: 'sine'
     }).toDestination();
 }
+
 
 function musicSetup() {
     button = createButton("Play Sound");
@@ -21,7 +22,7 @@ function musicSetup() {
 }
 
 function musicDraw() {
-    osc.frequency.value = accelerationMag * 100;
+    osc.frequency.value = accelerationMag * 70;
 }
 
 function play1() {
