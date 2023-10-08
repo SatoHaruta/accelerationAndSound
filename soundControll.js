@@ -6,31 +6,29 @@ let player;
 let shifter;
 let button;
 
-let baseURL = "music.wav"; 
+let baseURL = "music.wav";
 
-function preload(){
+function musicPreload() {
 
-  shifter = new Tone.PitchShift(2).toMaster();
+    shifter = new Tone.PitchShift(2).toMaster();
 
-  player = new Tone.Player(baseURL).connect(shifter); 
-  player.loop = true;
+    player = new Tone.Player(baseURL).connect(shifter);
+    player.loop = true;
 }
 
-function setup() {
-  createCanvas(windowWidth,windowHeight);
-  
-  button =createButton("Play Sound");
-  button.position(width/2-50, height/2);
-  button.mousePressed(play1);
+function musicSetup() {
+    button = createButton("Play Sound");
+    console.log("button is Created");
+    button.position(width / 2 - 50, height / 3);
+    button.mousePressed(play1);
 }
 
-function draw() {
-  shifter.pitch = map(mouseX, 0, windowWidth,-3,3);
-
+function musicDraw() {
+    shifter.pitch = map(mouseX, 0, windowWidth, -3, 3);
 }
 
-function play1(){
-  player.start();
+function play1() {
+    player.start();
 }
 
 
