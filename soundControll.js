@@ -5,6 +5,7 @@
 
 let button;
 let osc;
+let magRatio;
 
 function musicPreload() {
     osc = new Tone.Oscillator({
@@ -19,10 +20,11 @@ function musicSetup() {
     console.log("button is Created");
     button.position(width / 2 - 50, height / 3);
     button.mousePressed(play1);
+    magRatio = 50;
 }
 
 function musicDraw() {
-    osc.frequency.value = accelerationMag * 70;
+    osc.frequency.value = accelerationMag * magRatio;
 }
 
 function play1() {

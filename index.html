@@ -12,6 +12,18 @@
   <script src="soundControll.js"></script>
   <script src="Tone.js"></script>
   <link href="style.css" rel="stylesheet">
+  <script type="module">
+    import { Pane } from 'https://cdn.jsdelivr.net/npm/tweakpane@4.0.1/dist/tweakpane.min.js';
+    const pane = new Pane();
+    window.pane = pane;
+    const PARAMS = {
+      magRatio: 50,
+    };
+    window.pane.addBinding(PARAMS, 'magRatio', {
+      min: 0,
+      max: 100,
+    });
+  </script>
   <title>加速度と音</title>
 </head>
 
