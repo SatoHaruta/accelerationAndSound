@@ -12,9 +12,8 @@ function setup() {
 function draw() {
     background(255);
     accelerationDraw();
-    musicDraw();
     pane.on('change', (ev) => {
         magRatio = ev.value;
     });
-    console.log(magRatio);
+    musicDraw();
 }

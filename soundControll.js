@@ -25,6 +25,7 @@ function musicSetup() {
 
 function musicDraw() {
     osc.frequency.value = accelerationMag * magRatio;
+    console.log(osc.frequency.value);
 }
 
 function play1() {

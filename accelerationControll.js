@@ -63,6 +63,7 @@ function accelerationDraw() {
     text("AccelerationZ : " + acceleration.z, 10, 110);
     text("AccelerationYZmag : " + YZmag.mag(), 10, 150);
     text("AccelerationMag : " + accelerationMag, 10, 190);
+    text("osc.frequency.value : " + osc.frequency.value, 10, 230);
 
     YZmag.x = acceleration.y;
     YZmag.x = acceleration.z;
